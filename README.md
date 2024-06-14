@@ -7,10 +7,8 @@
 
 # 启动命令
 
-安装依赖库：pip install -r requirements.txt
-启动命令：`python main.py runserver` -p 8080
-进入系统: 在浏览器输入  http://127.0.0.1:8080/  
-管理员  账号：000001  密码：123456
+安装依赖库：`pip install -r requirements.txt`
+启动命令：`python main.py runserver`
 
 # 系统说明
 

@@ -95,8 +95,8 @@ class Equipment(db.Model):
 
 class Staff(UserMixin,db.Model):
     __tablename__ = 'staff'
-    card_id = db.Column(db.String(8), primary_key=True)
-    staff_id = db.Column(db.String(9))
+    card_id = db.Column(db.String(6), primary_key=True)
+    staff_id = db.Column(db.String(6))
     staff_name = db.Column(db.String(32))
     sex = db.Column(db.String(2))
     telephone = db.Column(db.String(11), nullable=True)
@@ -185,7 +185,7 @@ def login():
                 login_user(user)
                 session['card_id'] = user.card_id
                 session['name'] = user.staff_name
-                return redirect(url_for('index_usr'))
+                return redirect(url_for('index_user'))
             else:
                 flash('账号或密码错误！')
                 return redirect(url_for('login'))
@@ -236,10 +236,10 @@ def index():
     return render_template('index.html', name=session.get('name'))
 
 
-@app.route('/index_usr')
+@app.route('/index_user')
 @user_required
-def index_usr():
-    return render_template('index-usr.html', name=session.get('name'))
+def index_user():
+    return render_template('index-user.html', name=session.get('name'))
 
 
 @app.route('/echarts')
@@ -292,9 +292,9 @@ def change_password():
     return render_template("change-password.html", form=form)
 
 
-@app.route('/change_password_usr', methods=['GET', 'POST'])
+@app.route('/change_password_user', methods=['GET', 'POST'])
 @user_required
-def change_password_usr():
+def change_password_user():
     form = ChangePasswordForm()
     if form.password2.data != form.password.data:
         flash(u'两次密码不一致！')
@@ -307,7 +307,7 @@ def change_password_usr():
             return redirect(url_for('index_usr'))
         else:
             flash(u'原密码输入错误，修改失败！')
-    return render_template("change-password_usr.html", form=form)
+    return render_template("change-password_user.html", form=form)
 
 
 @app.route('/change_info', methods=['GET', 'POST'])
@@ -332,11 +332,11 @@ def search_equipment():  # 这个函数里不再处理提交按钮，使用Ajax�
     return render_template('search-equipment.html', name=session.get('name'), form=form)
 
 
-@app.route('/search_equipment_usr', methods=['GET', 'POST'])
+@app.route('/search_equipment_user', methods=['GET', 'POST'])
 @admin_required
-def search_equipment_usr():  # 这个函数里不再处理提交按钮，使用Ajax局部刷新
+def search_equipment_user():  # 这个函数里不再处理提交按钮，使用Ajax局部刷新
     form = SearchEquipmentForm()
-    return render_template('search_equipment_usr.html', name=session.get('name'), form=form)
+    return render_template('search-equipment-user.html', name=session.get('name'), form=form)
 
 
 @app.route('/equipments', methods=['POST'])
@@ -384,11 +384,11 @@ def search_staff():
     return render_template('search-staff.html', name=session.get('name'), form=form)
 
 
-@app.route('/search_staff_usr', methods=['GET', 'POST'])
+@app.route('/search_staff_user', methods=['GET', 'POST'])
 @admin_required
-def search_staff_usr():
+def search_staff_user():
     form = SearchStaffForm()
-    return render_template('search-staff_usr.html', name=session.get('name'), form=form)
+    return render_template('search-staff-user.html', name=session.get('name'), form=form)
 
 
 

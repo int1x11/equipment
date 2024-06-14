@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="data" uuid="a8997738-d934-412b-9e22-8d8035e7a493">
-      <driver-ref>sqlite.xerial</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\dell\Documents\WeChat Files\wxid_teqoaqr0coqf21\FileStorage\File\2024-06\【M1】基于PythonFlaskSQLAlchemyLayUI实现的设备借用登记系统（建议收藏）\设备借用登记系统\data.sqlite</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="data.sqlite" uuid="7d202339-2c33-4188-a46a-7ff56bb33375">
-      <driver-ref>sqlite.xerial</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/data.sqlite</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
     <data-source source="LOCAL" name="data.sqlite [2]" uuid="f2da1d53-10d0-493a-9d63-db45387d103f">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>

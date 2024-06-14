@@ -35,7 +35,7 @@
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="{{ url_for('user_info', id=current_user.card_id) }}">个人信息</a></dd>
-                    <dd><a href="{{ url_for('change_password_usr') }}">修改密码</a></dd>
+                    <dd><a href="{{ url_for('change_password_user') }}">修改密码</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item"><a href="{{ url_for('logout') }}">退出登录</a></li>
@@ -47,10 +47,10 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item">
-                    <a href="{{ url_for('search_equipment') }}">设备信息查询</a>
+                    <a href="{{ url_for('search_equipment_user') }}">设备信息查询</a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="{{ url_for('search_staff') }}">员工信息查询</a>
+                    <a href="{{ url_for('search_staff_user') }}">员工信息查询</a>
                 </li>
             </ul>
         </div>

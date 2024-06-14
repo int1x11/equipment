@@ -11,8 +11,8 @@ class Login(FlaskForm):
 
 
 class RegistrationForm(FlaskForm):
-    card_id = StringField('Card ID', validators=[DataRequired(), Length(min=8, max=8)])
-    staff_id = StringField('Staff ID', validators=[DataRequired(), Length(min=9, max=9)])
+    card_id = StringField('Card ID', validators=[DataRequired(), Length(min=6, max=6)])
+    staff_id = StringField('Staff ID', validators=[DataRequired(), Length(min=6, max=6)])
     staff_name = StringField('Staff Name', validators=[DataRequired(), Length(max=32)])
     sex = SelectField('Sex', choices=[('M', 'Male'), ('F', 'Female')], validators=[DataRequired()])
     telephone = StringField('Telephone', validators=[Length(min=11, max=11)])
