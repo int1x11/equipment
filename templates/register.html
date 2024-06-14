@@ -1,0 +1,59 @@
+{% extends "home.html" %}
+{% block title %}注册{% endblock %}
+
+{% block body %}
+<style>
+    .register-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    .layui-form {
+        width: 300px;
+    }
+
+    .layui-input-inline {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .register-btn {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<div class="register-main">
+    <header class="layui-elip">注册</header>
+    <form class="layui-form" method="post">
+        {{ form.csrf_token }}
+        <div class="layui-input-inline">
+            {{ form.card_id(class="layui-input", placeholder="卡号") }}
+        </div>
+        <div class="layui-input-inline">
+            {{ form.staff_id(class="layui-input", placeholder="员工号") }}
+        </div>
+        <div class="layui-input-inline">
+            {{ form.staff_name(class="layui-input", placeholder="姓名") }}
+        </div>
+        <div class="layui-input-inline">
+            {{ form.sex(class="layui-input", placeholder="性别") }}
+        </div>
+        <div class="layui-input-inline">
+            {{ form.telephone(class="layui-input", placeholder="电话号码") }}
+        </div>
+        <div class="layui-input-inline">
+            {{ form.password(class="layui-input", placeholder="密码") }}
+        </div>
+        <div class="layui-input-inline">
+            {{ form.confirm_password(class="layui-input", placeholder="确认密码") }}
+        </div>
+        <div class="layui-input-inline register-btn">
+            {{ form.submit(class="layui-btn") }}
+        </div>
+    </form>
+</div>
+{% endblock %}

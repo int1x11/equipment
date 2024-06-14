@@ -1,0 +1,26 @@
+{% extends "home.html" %}
+{% block title %}欢迎使用设备借用管理系统{% endblock %}
+
+{% block body %}
+<div class="login-main">
+    <header class="layui-elip">登录</header>
+    <form class="layui-form" method="post">
+        {{ form.csrf_token }}
+        <div class="layui-input-inline">
+            {{ form.account(class="layui-input",placeholder="账号") }}
+        </div>
+        <div class="layui-input-inline">
+            {{ form.password(class="layui-input",placeholder="密码") }}
+        </div>
+        <div class="layui-input-inline login-btn">
+            {{ form.submit_user(class="layui-btn") }}
+        </div>
+        <div class="layui-input-inline login-btn">
+            {{ form.submit_admin(class="layui-btn") }}
+        </div>
+        <hr/>
+        <p><a href="{{ url_for('register') }}" class="fr">注册</a></p>
+    </form>
+
+</div>
+{% endblock %}
